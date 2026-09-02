@@ -106,13 +106,13 @@
 
         layer_2 {
             bindings = <
-&kp ESCAPE  &kp LS(LC(TAB))  &kp UP_ARROW  &kp LC(TAB)  &kp LS(SQT)              &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)      &kp LS(NUMBER_6)   &kp LEFT_BRACKET
-&kp HOME    &kp LEFT         &kp DOWN      &kp RIGHT    &kp END                  &kp LS(N2)        &kp LS(N7)        &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_8)   &kp LS(NUMBER_9)
-&kp LC(Z)   &kp LC(X)        &kp LC(C)     &kp LC(V)    &kp LC(A)                &kp SEMICOLON     &kp SQT           &kp LS(INT_YEN)       &kp RIGHT_BRACKET  &kp BACKSLASH
-&trans      &trans           &trans        &trans       &trans       &trans      &trans            &trans            &trans                &kp LS(NUMBER_1)   &kp EQUAL
+&kp ESCAPE    &kp LS(LA(TAB))  &kp UP_ARROW  &kp LA(TAB)  &kp LS(SQT)                &kp LS(NUMBER_3)  &kp LS(NUMBER_4)  &kp LS(NUMBER_5)      &kp LS(NUMBER_6)   &kp LEFT_BRACKET
+&kp LG(LEFT)  &kp LEFT         &kp DOWN      &kp RIGHT    &kp LG(RIGHT)              &kp LS(N2)        &kp LS(N7)        &kp LS(LEFT_BRACKET)  &kp LS(NUMBER_8)   &kp LS(NUMBER_9)
+&kp LG(Z)     &kp LG(X)        &kp LG(C)     &kp LG(V)    &kp LG(A)                  &kp SEMICOLON     &kp SQT           &kp LS(INT_YEN)       &kp RIGHT_BRACKET  &kp BACKSLASH
+&trans        &trans           &trans        &trans       &trans         &trans      &trans            &trans            &trans                &kp LS(NUMBER_1)   &kp EQUAL
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
         };
 
         layer_3 {
