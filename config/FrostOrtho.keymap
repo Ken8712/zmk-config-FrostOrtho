@@ -111,12 +111,12 @@
             sensor-bindings = <&rsr_vol &rsr_trans>;
         };
 
-        layer_2 {
+        ipad_arrow_mouse {
             bindings = <
-&kp ESCAPE    &kp LS(LA(TAB))  &kp UP_ARROW  &kp LA(TAB)  &kp LS(SQT)                &kp LG(R)      &hold_tap GLOBE LA(LEFT)  &hold_tap GLOBE LA(RIGHT)  &hold_tap GLOBE LEFT_ARROW  &hold_tap GLOBE RIGHT
-&kp LG(LEFT)  &kp LEFT         &kp DOWN      &kp RIGHT    &kp LG(RIGHT)              &kp LG(F)      &kp LS(N7)                &kp LS(LEFT_BRACKET)       &kp LS(NUMBER_8)            &kp LS(NUMBER_9)
-&kp LG(Z)     &kp LG(X)        &kp LG(C)     &kp LG(V)    &kp LG(A)                  &kp SEMICOLON  &kp COLON                 &trans                     &kp RIGHT_BRACKET           &kp BACKSLASH
-&trans        &trans           &trans        &trans       &trans         &trans      &trans         &trans                    &trans                     &kp LS(NUMBER_1)            &kp EQUAL
+&kp ESCAPE    &kp LS(LA(TAB))  &kp UP_ARROW  &kp LA(TAB)  &kp LS(SQT)                &kp LG(R)      &hold_tap GLOBE LA(LEFT)  &hold_tap GLOBE LA(RIGHT)   &hold_tap GLOBE LEFT_ARROW  &hold_tap GLOBE RIGHT
+&kp LG(LEFT)  &kp LEFT         &kp DOWN      &kp RIGHT    &kp LG(RIGHT)              &kp LG(F)      &mkp MB1                  &hold_tap GLOBE UP_ARROW    &mkp MB2                    &kp LS(NUMBER_9)
+&kp LG(Z)     &kp LG(X)        &kp LG(C)     &kp LG(V)    &kp LG(A)                  &kp SEMICOLON  &kp LG(RIGHT_BRACKET)     &hold_tap GLOBE DOWN_ARROW  &kp LG(BACKSLASH)           &kp LS(LG(NUMBER_3))
+&trans        &trans           &trans        &trans       &trans         &trans      &trans         &kp DELETE                &trans                      &kp LS(NUMBER_1)            &trans
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
