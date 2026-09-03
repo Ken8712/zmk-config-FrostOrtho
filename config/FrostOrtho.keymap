@@ -107,7 +107,7 @@
 &kp Q             &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O       &kp P
 &kp A             &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L       &lt 5 MINUS
 &mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD  &lt 7 SLASH
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 7 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &mkp MB1   &lt 4 F10   &mt RIGHT_SHIFT INTERNATIONAL_1
+&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 8 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &mkp MB1   &lt 4 F10   &mt RIGHT_SHIFT INTERNATIONAL_1
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
@@ -192,10 +192,10 @@
 
         layer_8 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&tap_with_alt Q  &tap_with_alt W  &tap_with_alt E  &tap_with_alt R  &tap_with_alt T              &tap_with_alt Y  &tap_with_alt U  &tap_with_alt I      &tap_with_alt O       &tap_with_alt P
+&tap_with_alt A  &tap_with_alt S  &tap_with_alt D  &tap_with_alt F  &tap_with_alt F              &tap_with_alt H  &tap_with_alt J  &tap_with_alt K      &tap_with_alt L       &tap_with_alt MINUS
+&tap_with_alt Z  &tap_with_alt X  &tap_with_alt C  &tap_with_alt V  &tap_with_alt B              &tap_with_alt N  &tap_with_alt M  &tap_with_alt COMMA  &tap_with_alt PERIOD  &tap_with_alt SLASH
+&trans           &trans           &trans           &trans           &trans           &trans      &trans           &trans           &trans               &trans                &trans
             >;
 
             sensor-bindings = <&scroll_up_down>;
