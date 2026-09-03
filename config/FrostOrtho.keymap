@@ -47,6 +47,17 @@
             bindings = <&macro_param_1to1 &kt MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kt MACRO_PLACEHOLDER>;
             label = "HOLD_TAP";
         };
+
+        tap_with_alt: tap_with_alt {
+            compatible = "zmk,behavior-macro-one-param";
+            #binding-cells = <1>;
+            bindings =
+                <&kp LEFT_ALT &macro_param_1to1 &kp MACRO_PLACEHOLDER>,
+                <&macro_press>,
+                <&kt LEFT_ALT>;
+
+            label = "TAP_WITH_ALT";
+        };
     };
 
     behaviors {
