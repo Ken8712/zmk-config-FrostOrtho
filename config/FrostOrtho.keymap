@@ -40,6 +40,13 @@
 
             label = "SCREENSHOT";
         };
+
+        hold_tap: hold_tap {
+            compatible = "zmk,behavior-macro-two-param";
+            #binding-cells = <2>;
+            bindings = <&macro_param_1to1 &kt MACRO_PLACEHOLDER &macro_param_2to1 &kp MACRO_PLACEHOLDER &macro_param_1to1 &kt MACRO_PLACEHOLDER>;
+            label = "HOLD_TAP";
+        };
     };
 
     behaviors {
