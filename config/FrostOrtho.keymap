@@ -170,10 +170,10 @@
 
         layer_7 {
             bindings = <
-&kp LC(Z)         &kp LC(Y)     &kp LS(UP_ARROW)  &trans         &trans                         &trans  &trans  &trans  &trans  &trans
-&kp LS(LG(LEFT))  &kp LS(LEFT)  &kp LS(DOWN)      &kp LS(RIGHT)  &kp LS(LG(RIGHT))              &trans  &trans  &trans  &trans  &trans
-&trans            &screenshot   &kp LC(INS)       &kp LS(INS)    &trans                         &trans  &trans  &trans  &trans  &trans
-&trans            &trans        &trans            &trans         &trans             &trans      &trans  &trans  &trans  &trans  &trans
+&kp LC(LS(LEFT))  &kp LC(LEFT)  &kp LS(UP_ARROW)  &kp LC(RIGHT)         &kp LS(LC(RIGHT))              &trans  &trans  &trans  &trans  &trans
+&kp LS(LG(LEFT))  &kp LS(LEFT)  &kp LS(DOWN)      &kp LS(RIGHT)         &kp LS(LG(RIGHT))              &trans  &trans  &trans  &trans  &trans
+&trans            &trans        &trans            &hold_tap GLOBE INT3  &trans                         &trans  &trans  &trans  &trans  &trans
+&trans            &trans        &trans            &trans                &trans             &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
