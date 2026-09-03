@@ -118,7 +118,7 @@
 &kp ESCAPE    &kp LS(LA(TAB))  &kp UP_ARROW  &kp LA(TAB)  &kp LS(SQT)                &kp LG(R)      &hold_tap GLOBE LA(LEFT)  &hold_tap GLOBE LA(RIGHT)   &hold_tap GLOBE LEFT_ARROW  &hold_tap GLOBE RIGHT
 &kp LG(LEFT)  &kp LEFT         &kp DOWN      &kp RIGHT    &kp LG(RIGHT)              &kp LG(F)      &mkp MB1                  &hold_tap GLOBE UP_ARROW    &mkp MB2                    &kp LS(NUMBER_9)
 &kp LG(Z)     &kp LG(X)        &kp LG(C)     &kp LG(V)    &kp LG(A)                  &kp SEMICOLON  &kp LG(RIGHT_BRACKET)     &hold_tap GLOBE DOWN_ARROW  &kp LG(BACKSLASH)           &kp LS(LG(NUMBER_3))
-&trans        &trans           &trans        &trans       &trans         &trans      &trans         &kp DELETE                &trans                      &kp LS(NUMBER_1)            &trans
+&trans        &trans           &trans        &trans       &trans         &trans      &kp BACKSPACE  &kp DELETE                &trans                      &kp LS(NUMBER_1)            &trans
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
@@ -143,7 +143,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans        &trans        &trans        &bt BT_CLR_ALL
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
         };
 
         layer_5 {
@@ -154,7 +154,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
         };
 
         MOUSE {
@@ -165,18 +165,18 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &trans    &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
         };
 
         layer_7 {
             bindings = <
-&kp LC(Z)  &kp LC(Y)    &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
-&trans     &trans       &trans       &trans       &trans              &trans  &trans  &trans  &trans  &trans
-&trans     &screenshot  &kp LC(INS)  &kp LS(INS)  &trans              &trans  &trans  &trans  &trans  &trans
-&trans     &trans       &trans       &trans       &trans  &trans      &trans  &trans  &trans  &trans  &trans
+&kp LC(Z)         &kp LC(Y)     &kp LS(UP_ARROW)  &trans         &trans                         &trans  &trans  &trans  &trans  &trans
+&kp LS(LG(LEFT))  &kp LS(LEFT)  &kp LS(DOWN)      &kp LS(RIGHT)  &kp LS(LG(RIGHT))              &trans  &trans  &trans  &trans  &trans
+&trans            &screenshot   &kp LC(INS)       &kp LS(INS)    &trans                         &trans  &trans  &trans  &trans  &trans
+&trans            &trans        &trans            &trans         &trans             &trans      &trans  &trans  &trans  &trans  &trans
             >;
 
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
         };
 
         layer_8 {
@@ -186,6 +186,8 @@
 &trans  &trans  &trans  &trans  &trans              &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans
             >;
+
+            sensor-bindings = <&scroll_up_down>;
         };
     };
 };
