@@ -37,7 +37,16 @@ DYA Studio 系モジュール（`cormoran/*` 5個）の機能は **zmk.dev に�
 - **レイヤー番号 5 / 6 / 7 が `FrostOrtho_R.overlay` にハードコード**されている
   （5=縦スクロール、6=AML、7=横スクロール）。ZMK Studio でレイヤーを並べ替えると全部ズレる。
 - `zip_temp_layer` の `excluded-positions = <6 7 8 20 30 32>` も**キー位置番号**で固定。
-  物理レイアウトを変えたら振り直す。
+  物理レイアウトを変えたら振り直す（現在は AML 無効化に伴いコメントアウト済み）。
+- **AML（オートマウスレイヤー）は無効化してある。** スイッチは3か所に分かれており、
+  戻すときは overlay の `&zip_temp_layer {...}` ブロックと `trackball_listener` 内の
+  `&zip_temp_layer 6 100000` をコメント解除し、keymap の `&tog 6` を `&trans` に戻す。
+  keymap の `&mkp_input_listener` は**クリック時のタイムアウト延長だけ**なので、
+  あれ単体をコメントアウトしても AML は切れない。
+  layer_6（マウスボタン）への入口は **layer_1 の左手 F（`&tog 6`）**。
+- **keymap にプリプロセッサマクロを書かないこと。** keymap-editor は `#define` も
+  `#include` も解決しないため、`&lt LAYER_X KEY` のような書き方をすると
+  エディタ上で全てエラー表示になる。レイヤー番号は数値直書きのままにする。
 - **`CONFIG_BT_MAX_PAIRED=5` のコメントを外してはいけない。**
   `ZMK_BLE_PROFILE_COUNT = BT_MAX_PAIRED − 周辺機器数` なので 6−1=5 → 5−1=4 に減り、
   keymap の `&bt BT_SEL 4` が使えなくなる。
