@@ -65,8 +65,9 @@ DYA Studio 系モジュール（`cormoran/*` 5個）の機能は **zmk.dev に�
   iPad（Resolution Multiplier 非対応前提）で 1クリック = 1ノッチ。
   Windows/Linux では `CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y` により 1ノッチ = 16 unit なので、
   遅ければ 1000 程度に上げる。
-- `FrostOrtho.dtsi` の `triggers-per-rotation` を 10 → 24 に変更（`steps=24` と一致させ 1クリック = 1トリガ）。
-  10 のままだと 36° ごとにしか発火せず、約 2.4 クリックに 1 回しか反応しない。
+- `FrostOrtho.dtsi` の `triggers-per-rotation` は **12**（2 クリックで 1 ノッチ）。
+  24（1 クリック = 1 ノッチ）は敏感すぎ・遅延も倍で操作がシビアだった。まだ強ければ 8 → 6 と落とす。
+  upstream の 10 は `steps=24` で割り切れず反応が不均一になるので、**24 の約数**を使う。
 - **固着問題（2026-09-05）**: 上記だけだと速く回したとき「離す」が落ちてスクロールが止まらなくなった。
   `&msc` の押す/離すは behavior queue（既定 64 件）を 1 クリック 20ms で消化するため、
   速く回すと溢れて `k_msgq_put` が黙って失敗する。`&msc` は `speed += dy` の加算式なので、

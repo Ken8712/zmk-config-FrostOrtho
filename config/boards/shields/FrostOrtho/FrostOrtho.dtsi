@@ -93,7 +93,10 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
-        triggers-per-rotation = <24>; // steps=24 と揃えて 1クリック = 1トリガ（10 だと約2.4クリックに1回）
+        // steps=24 の約数にする（24:1クリック/トリガ, 12:2クリック, 8:3クリック, 6:4クリック）。
+        // 24 だと敏感すぎ、かつ &msc の消化が 20ms/トリガなので速く回すと遅延が出る。
+        // upstream の 10 は 24 で割り切れず反応が不均一になるので避ける。
+        triggers-per-rotation = <12>;
     };
 
     trackball_listener: trackball_listener {
