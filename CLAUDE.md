@@ -43,7 +43,8 @@ DYA Studio 系モジュール（`cormoran/*` 5個）の機能は **zmk.dev に�
   `&zip_temp_layer 6 100000` をコメント解除し、keymap の `&tog 6` を `&trans` に戻す。
   keymap の `&mkp_input_listener` は**クリック時のタイムアウト延長だけ**なので、
   あれ単体をコメントアウトしても AML は切れない。
-  layer_6（マウスボタン）への入口は **layer_1 の左手 F（`&tog 6`）**。
+  layer_6（マウスボタン）への入口は **現在なし**（layer_1 を AroundFortyRB の NUM+Symbol に置き換えた際に
+  `&tog 6` を削除。ベースの `&mkp MB1` で左クリックは可能）。必要なら空いている `&trans` に `&tog 6` を戻す。
 - **keymap にプリプロセッサマクロを書かないこと。** keymap-editor は `#define` も
   `#include` も解決しないため、`&lt LAYER_X KEY` のような書き方をすると
   エディタ上で全てエラー表示になる。レイヤー番号は数値直書きのままにする。

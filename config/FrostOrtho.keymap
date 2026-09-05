@@ -122,10 +122,10 @@
 
         layer_1 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans          &kp F1  &kp F2   &kp F3  &kp F4   &kp F5
-&trans  &trans  &trans  &tog 6  &trans          &kp F6  &kp F7   &kp F8  &kp F9   &kp F10
-&trans  &trans  &trans  &trans  &trans          &trans  &trans   &trans  &kp F11  &kp F12
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp DEL  &trans  &trans   &kp ESCAPE
+&kp MINUS             &kp N7  &kp N8  &kp N9  &kp LS(SEMICOLON)          &kp EQUAL          &kp CARET         &kp PLUS         &kp ASTERISK     &kp LEFT_PARENTHESIS
+&kp N0                &kp N4  &kp N5  &kp N6  &kp LS(DQT)                &kp EXCLAMATION    &kp LEFT_BRACKET  &kp POUND        &kp DOLLAR       &kp PERCENT
+&mt LEFT_SHIFT SLASH  &kp N1  &kp N2  &kp N3  &kp DOT                    &kp RIGHT_BRACKET  &kp BACKSLASH     &kp RIGHT_BRACE  &kp PIPE         &mt LCTRL INTERNATIONAL_1
+&kp RBKT              &trans  &trans  &trans  &trans             &trans  &trans             &kp LEFT_BRACE    &trans           &lt 2 LS(LG(S))  &kp LS(INTERNATIONAL_3)
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
