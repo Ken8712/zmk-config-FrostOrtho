@@ -3,6 +3,7 @@
 // 100 なら 1ティックで 1.6 → 1 unit = 1クリック 1ノッチ
 // （R.conf で smooth scrolling を無効にしているので iPad / Windows とも同じ）。
 // pointing.h の #ifndef より前に置く必要があるため、全 #include より先に書く。
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 #include <input/processors.dtsi>
@@ -111,10 +112,10 @@
 
         ipad {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O       &kp P
-&kp A             &kp S         &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L       &lt 5 MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD  &lt 7 SLASH
-&kp LEFT_CONTROL  &kp LEFT_WIN  &kp LEFT_ALT  &lt 8 LANG_HANJA  &lt 2 SPACE  &lt 3 LANG1      &lt 1 ENTER  &kp BACKSPACE  &mkp MB1   &lt 4 F10   &mt RIGHT_SHIFT INTERNATIONAL_1
+&kp Q             &kp W             &kp E         &kp R             &kp T                         &kp Y        &kp U          &kp I      &kp O       &kp P
+&kp A             &kp S             &kp D         &kp F             &kp G                         &kp H        &kp J          &kp K      &kp L       &mt LEFT_GUI MINUS
+&mt LEFT_SHIFT Z  &kp X             &kp C         &kp V             &kp B                         &kp N        &kp M          &kp COMMA  &kp PERIOD  &mt LEFT_SHIFT SLASH
+&kp LEFT_GUI      &kp LEFT_CONTROL  &kp LEFT_ALT  &lt 8 LANG_HANJA  &lt 2 SPACE  &lt 4 LANG1      &lt 1 ENTER  &kp BACKSPACE  &mkp MB1   &lt 4 F10   &lt 5 INTERNATIONAL_1
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
@@ -122,10 +123,10 @@
 
         layer_1 {
             bindings = <
-&kp MINUS             &kp N7  &kp N8  &kp N9  &kp LS(SEMICOLON)          &kp EQUAL          &kp CARET         &kp PLUS         &kp ASTERISK     &kp LEFT_PARENTHESIS
-&kp N0                &kp N4  &kp N5  &kp N6  &kp LS(DQT)                &kp EXCLAMATION    &kp LEFT_BRACKET  &kp POUND        &kp DOLLAR       &kp PERCENT
-&mt LEFT_SHIFT SLASH  &kp N1  &kp N2  &kp N3  &kp DOT                    &kp RIGHT_BRACKET  &kp BACKSLASH     &kp RIGHT_BRACE  &kp PIPE         &mt LCTRL INTERNATIONAL_1
-&kp RBKT              &trans  &trans  &trans  &trans             &trans  &trans             &kp LEFT_BRACE    &trans           &lt 2 LS(LG(S))  &kp LS(INTERNATIONAL_3)
+&kp MINUS             &kp N7  &kp N8  &kp N9  &kp LS(SEMICOLON)              &kp EQUAL          &kp CARET         &kp PLUS         &kp ASTERISK     &kp LEFT_PARENTHESIS
+&kp N0                &kp N4  &kp N5  &kp N6  &kp LS(DQT)                    &kp EXCLAMATION    &kp LEFT_BRACKET  &kp POUND        &kp DOLLAR       &kp PERCENT
+&mt LEFT_SHIFT SLASH  &kp N1  &kp N2  &kp N3  &kp DOT                        &kp RIGHT_BRACKET  &kp BACKSLASH     &kp RIGHT_BRACE  &kp PIPE         &mt LCTRL INTERNATIONAL_1
+&mt LEFT_GUI RBKT     &trans  &trans  &trans  &lt 2 SPACE        &trans      &trans             &kp LEFT_BRACE    &trans           &lt 2 LS(LG(S))  &kp LS(INTERNATIONAL_3)
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
@@ -133,10 +134,10 @@
 
         ipad_arrow_mouse {
             bindings = <
-&kp ESCAPE    &kp LS(LA(TAB))  &kp UP_ARROW  &kp LA(TAB)  &kp LS(SQT)                &kp LG(R)      &hold_tap GLOBE LA(LEFT)  &hold_tap GLOBE LA(RIGHT)   &hold_tap GLOBE LEFT_ARROW  &hold_tap GLOBE RIGHT
-&kp LG(LEFT)  &kp LEFT         &kp DOWN      &kp RIGHT    &kp LG(RIGHT)              &kp LG(F)      &mkp MB1                  &hold_tap GLOBE UP_ARROW    &mkp MB2                    &kp LS(NUMBER_9)
-&kp LG(Z)     &kp LG(X)        &kp LG(C)     &kp LG(V)    &kp LG(A)                  &kp SEMICOLON  &kp LG(RIGHT_BRACKET)     &hold_tap GLOBE DOWN_ARROW  &kp LG(BACKSLASH)           &kp LS(LG(NUMBER_3))
-&trans        &trans           &trans        &trans       &trans         &trans      &kp BACKSPACE  &kp DELETE                &trans                      &kp LS(NUMBER_1)            &trans
+&kp ESCAPE            &kp LS(LA(TAB))  &kp UP_ARROW  &kp LA(TAB)  &kp LS(SQT)                &kp LG(R)        &hold_tap GLOBE LA(LEFT)  &hold_tap GLOBE LA(RIGHT)   &hold_tap GLOBE LEFT_ARROW  &hold_tap GLOBE RIGHT
+&kp LG(LEFT)          &kp LEFT         &kp DOWN      &kp RIGHT    &kp LG(RIGHT)              &kp LG(F)        &mkp MB1                  &hold_tap GLOBE UP_ARROW    &mkp MB2                    &kp LS(NUMBER_9)
+&mt LEFT_SHIFT LG(Z)  &kp LG(X)        &kp LG(C)     &kp LG(V)    &kp LG(A)                  &kp SEMICOLON    &kp LG(RIGHT_BRACKET)     &hold_tap GLOBE DOWN_ARROW  &kp LG(BACKSLASH)           &kp LS(LG(NUMBER_3))
+&trans                &trans           &trans        &trans       &trans         &trans      &lt 1 BACKSPACE  &kp DELETE                &trans                      &kp LS(NUMBER_1)            &trans
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
@@ -155,10 +156,10 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans              &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans  &trans  &trans  &trans              &trans          &trans        &trans        &trans        &trans
-&trans  &trans  &trans  &trans  &trans              &studio_unlock  &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans          &trans        &trans        &trans        &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans              &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans  &trans  &trans  &trans              &trans        &trans        &trans        &trans        &trans
+&trans  &trans  &trans  &trans  &trans              &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
             >;
 
             sensor-bindings = <&scroll_up_down>, <&rsr_trans>;
@@ -206,6 +207,15 @@
             >;
 
             sensor-bindings = <&scroll_up_down>;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        textselector_condition {
+            if-layers = <2 1>;
+            then-layer = <7>;
         };
     };
 };
