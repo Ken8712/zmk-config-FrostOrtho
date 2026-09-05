@@ -94,7 +94,9 @@ firmware/                   初期ファームウェア
 ## 作業ルール
 
 - コミット作者は `Ken8712 <skyblow.9@gmail.com>`（既存コミットは keymap-editor[bot]）
-- `git push` はこの環境から実行できない（認証情報がないため）。コミットまで行い、push はユーザーに依頼する
+- `git push` は可能（origin の URL にリポジトリ限定の fine-grained PAT を埋め込んである。`.git/config` 内、git 管理外）。
+  **`git remote -v` / `git remote get-url` / `git config --list` など URL を表示するコマンドは出力にトークンが出るので使わない。**
+  push 結果の `To https://...` 行は git が認証情報を除いて表示するので問題ない
 - 接続フォルダ内で git を実行するとロックファイル（`.git/index.lock` 等）が消せずに残ることがある。
   作業後に `rm -f .git/index.lock .git/HEAD.lock .git/objects/maintenance.lock` と
   `find .git/objects -name 'tmp_obj_*' -delete` で掃除する
