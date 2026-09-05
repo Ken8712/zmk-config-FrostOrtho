@@ -55,6 +55,19 @@ DYA Studio 系モジュール（`cormoran/*` 5個）の機能は **zmk.dev に�
 - **CI の push トリガーは `config/**` 限定**。`build.yaml` や workflow だけ直しても
   ビルドは走らない（`workflow_dispatch` で手動実行するか `config/` も触る）。
 
+## エンコーダのスクロール（2026-09-05 修正済み）
+
+- `&msc` は「速度（units/秒）」を 16ms ティックごとに整数化して送る two-axis ビヘイビア。
+  既定の `SCRL_UP`（=10）だと `tap-ms=20` の1ティックで 0.16 → **0 unit** で何も出ない。
+  `&kp C_VOL_*` は離散イベントなので影響を受けない（これが「音量は効くのにスクロールは効かない」の正体）。
+- 対策として keymap 先頭で `#define ZMK_POINTING_DEFAULT_SCRL_VAL 100` を定義
+  （`pointing.h` の `#ifndef` を利用。全 `#include` より前に置くこと。keymap-editor はこの行を無視する）。
+  iPad（Resolution Multiplier 非対応前提）で 1クリック = 1ノッチ。
+  Windows/Linux では `CONFIG_ZMK_POINTING_SMOOTH_SCROLLING=y` により 1ノッチ = 16 unit なので、
+  遅ければ 1000 程度に上げる。
+- `FrostOrtho.dtsi` の `triggers-per-rotation` を 10 → 24 に変更（`steps=24` と一致させ 1クリック = 1トリガ）。
+  10 のままだと 36° ごとにしか発火せず、約 2.4 クリックに 1 回しか反応しない。
+
 ## 既知の軽微な不整合（未修正）
 
 - `config/FrostOrtho.keymap` の `#include <behaviors/runtime-sensor-rotate.dtsi>` が2行重複

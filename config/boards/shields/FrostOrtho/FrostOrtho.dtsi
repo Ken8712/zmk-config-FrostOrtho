@@ -93,7 +93,7 @@
     sensors: sensors {
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder>;
-        triggers-per-rotation = <10>;
+        triggers-per-rotation = <24>; // steps=24 と揃えて 1クリック = 1トリガ（10 だと約2.4クリックに1回）
     };
 
     trackball_listener: trackball_listener {
