@@ -1,7 +1,7 @@
 // エンコーダの &msc SCRL_UP/DOWN の速度（units/秒）。既定 10 では tap-ms=20 の
 // 1ティック(16ms)あたり 0.16 unit → 整数化で 0 になり、何も送られない。
-// 100 なら 1ティックで 1.6 → 1 unit = 1ノッチ（Resolution Multiplier 非対応ホスト向け）。
-// Windows/Linux で遅すぎる場合は 1000 程度（1ノッチ = 16 unit）に上げる。
+// 100 なら 1ティックで 1.6 → 1 unit = 1クリック 1ノッチ
+// （R.conf で smooth scrolling を無効にしているので iPad / Windows とも同じ）。
 // pointing.h の #ifndef より前に置く必要があるため、全 #include より先に書く。
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 

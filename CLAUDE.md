@@ -67,6 +67,15 @@ DYA Studio 系モジュール（`cormoran/*` 5個）の機能は **zmk.dev に�
   遅ければ 1000 程度に上げる。
 - `FrostOrtho.dtsi` の `triggers-per-rotation` を 10 → 24 に変更（`steps=24` と一致させ 1クリック = 1トリガ）。
   10 のままだと 36° ごとにしか発火せず、約 2.4 クリックに 1 回しか反応しない。
+- **固着問題（2026-09-05）**: 上記だけだと速く回したとき「離す」が落ちてスクロールが止まらなくなった。
+  `&msc` の押す/離すは behavior queue（既定 64 件）を 1 クリック 20ms で消化するため、
+  速く回すと溢れて `k_msgq_put` が黙って失敗する。`&msc` は `speed += dy` の加算式なので、
+  「離す」が 1 回落ちると速度が残り続ける（CW が効かない・CCW だけ効く・止まらない、は全部これ）。
+  応急処置として `FrostOrtho_R.conf` に `CONFIG_ZMK_BEHAVIORS_QUEUE_SIZE=256`。
+  速く回したときの遅延（20ms × クリック数）は残る。根本対策は gpio-qdec + `zmk,input-split` で
+  エンコーダを入力デバイス化すること（sensor-bindings は使えなくなる）。未着手。
+- `CONFIG_ZMK_POINTING_SMOOTH_SCROLLING` は **n** に変更。y だと Windows/Linux は 1 unit = 1/16 ノッチ、
+  iPad は 1 unit = 1 ノッチとホストで解釈が割れ、両方に合う値が存在しないため。
 
 ## 既知の軽微な不整合（未修正）
 
