@@ -201,7 +201,7 @@
         layer_8 {
             bindings = <
 &tap_with_alt Q  &tap_with_alt W  &tap_with_alt E  &tap_with_alt R  &tap_with_alt T              &tap_with_alt Y  &tap_with_alt U  &tap_with_alt I      &tap_with_alt O       &tap_with_alt P
-&tap_with_alt A  &tap_with_alt S  &tap_with_alt D  &tap_with_alt F  &tap_with_alt F              &tap_with_alt H  &tap_with_alt J  &tap_with_alt K      &tap_with_alt L       &tap_with_alt MINUS
+&tap_with_alt A  &tap_with_alt S  &tap_with_alt D  &tap_with_alt F  &tap_with_alt G              &tap_with_alt H  &tap_with_alt J  &tap_with_alt K      &tap_with_alt L       &tap_with_alt MINUS
 &tap_with_alt Z  &tap_with_alt X  &tap_with_alt C  &tap_with_alt V  &tap_with_alt B              &tap_with_alt N  &tap_with_alt M  &tap_with_alt COMMA  &tap_with_alt PERIOD  &tap_with_alt SLASH
 &trans           &trans           &trans           &trans           &trans           &trans      &trans           &trans           &trans               &trans                &trans
             >;
