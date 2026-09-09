@@ -69,6 +69,18 @@
             key-positions = <17 18>;
             layers = <1>;
         };
+
+        command+up_only_layer_0 {
+            bindings = <&kp LG(UP_ARROW)>;
+            key-positions = <10 11 13>;
+            layers = <0>;
+        };
+
+        command+down_only_layer_0 {
+            bindings = <&kp LG(DOWN)>;
+            key-positions = <10 12 13>;
+            layers = <0>;
+        };
     };
 
     macros {
